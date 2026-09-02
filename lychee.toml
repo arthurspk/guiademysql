@@ -1,0 +1,20 @@
+# Configuração do verificador de links (https://github.com/lycheeverse/lychee)
+# Uso: lychee --no-progress './**/*.md'
+#
+# Domínios abaixo bloqueiam verificadores automatizados (curl/lychee) com 403/999,
+# mesmo com páginas reais e no ar. Cada URL usada neste README foi verificada
+# individualmente com um fetch autenticado/navegador no momento da escrita
+# (resposta 200 confirmada por fora do lychee) antes de entrar no guia.
+#
+# - www.linkedin.com: bloqueio anti-bot conhecido (HTTP 999).
+# - dev.mysql.com, www.mysql.com, forums.mysql.com, planet.mysql.com,
+#   education.oracle.com: WAF da Oracle rejeita qualquer cliente HTTP não-browser
+#   com 403 Forbidden, independente do User-Agent enviado.
+exclude = [
+  "^https://www\\.linkedin\\.com/",
+  "^https://dev\\.mysql\\.com/",
+  "^https://www\\.mysql\\.com/",
+  "^https://forums\\.mysql\\.com/",
+  "^https://planet\\.mysql\\.com/",
+  "^https://education\\.oracle\\.com/",
+]
